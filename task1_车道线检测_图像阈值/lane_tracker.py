@@ -71,10 +71,10 @@ class LaneTracker:
         M = cv2.getPerspectiveTransform(src, dst)
         Minv = cv2.getPerspectiveTransform(dst, src)
         warped_binary = cv2.warpPerspective(combo_binary, M, img_size, flags=cv2.INTER_LINEAR)
-        cv2.imshow("s_thresh", warped_binary)
-
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+        # cv2.imshow("s_thresh", warped_binary)
+        #
+        # cv2.waitKey(0)
+        # cv2.destroyAllWindows()
         # Identify the x and y positions of all nonzero pixels in the image
         nonzero = warped_binary.nonzero()
         nonzeroy = np.array(nonzero[0])
@@ -91,7 +91,7 @@ class LaneTracker:
             # Take a histogram of the bottom half of the image
             histogram = np.sum(warped_binary[int(warped_binary.shape[0]/2):,:], axis=0)
 
-            print(histogram)
+            # print(histogram)
 
             # Find the peak of the left and right halves of the histogram
             # These will be the starting point for the left and right lines
@@ -138,7 +138,6 @@ class LaneTracker:
             self.detected = True
 
         else:
-            print('11111')
             left_lane_idx = ((nonzerox > (self.best_left_fit[0]*(nonzeroy**2) + self.best_left_fit[1]*nonzeroy \
                             + self.best_left_fit[2] - margin)) & (nonzerox < (self.best_left_fit[0]*(nonzeroy**2) \
                             + self.best_left_fit[1]*nonzeroy + self.best_left_fit[2] + margin)))
