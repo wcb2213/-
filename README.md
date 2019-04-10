@@ -3,6 +3,12 @@
 
 task1：使用图像阈值的方法均来检测车道线的位置。
 -
+参考代码：https://github.com/ncondo/CarND-Advanced-Lane-Lines
 
 task2： 改用霍夫变换检测车道线并检测虚实线
 -
+参考博客：https://blog.csdn.net/weixin_39059031/article/details/82422182
+task3： 通过车辆位置信息设计前车预警
+-
+使用了一个已经训练好的SSD模型得到车辆位置信息
+参考模型：https://github.com/kcg2015/Vehicle-Detection-and-Tracking
