@@ -26,7 +26,7 @@ def main():
 
         result = lane_tracker.apply_lines(img)
 
-        write_name = './output_imgs/result'+str(idx+1)+'.jpg'
+        write_name = './out_imgs/result'+str(idx+1)+'.jpg'
         cv2.imwrite(write_name, result)
 
 
