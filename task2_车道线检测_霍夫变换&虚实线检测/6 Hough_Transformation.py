@@ -45,7 +45,7 @@ def hough_lines(img, rho, theta, threshold,
     return line_img
 
 
-img = mplimg.imread('./cut_image/5.jpg')
+img = mplimg.imread('./cut_imgs/5.jpg')
 gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 blur_gray = cv2.GaussianBlur(gray, (blur_ksize, blur_ksize), 0, 0)
 edges = cv2.Canny(blur_gray, canny_lthreshold, canny_hthreshold)

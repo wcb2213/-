@@ -7,7 +7,7 @@ import matplotlib.image as mplimg
 import matplotlib.pyplot as plt
 import numpy as np
 import cv2
-from img_chinese_disp import img_chinese_display
+from func_img_chinese_disp import img_chinese_display
 
 blur_ksize = 5  # Gaussian blur kernel size
 canny_lthreshold = 50  # Canny edge detection low threshold
@@ -170,7 +170,7 @@ def calc_lane_vertices(point_list, ymin, ymax):
     xmax = int(fit_fn(ymax))
     return [(xmin, ymin), (xmax, ymax)]
 
-img = mplimg.imread('./cut_image/12.jpg')
+img = mplimg.imread('./cut_imgs/12.jpg')
 gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
 blur_gray = cv2.GaussianBlur(gray, (blur_ksize, blur_ksize), 0, 0)
 edges = cv2.Canny(blur_gray, canny_lthreshold, canny_hthreshold)
