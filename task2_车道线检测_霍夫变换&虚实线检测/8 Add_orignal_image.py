@@ -76,7 +76,7 @@ def clean_lines(lines, threshold):
         idx = np.argmax(diff)
         if diff[idx] > threshold:
             slope.pop(idx)
-            lines.pop(idx)
+            lines.pop
         else:
             break
 
